@@ -13,11 +13,11 @@ import (
 )
 
 var (
-	peersStr   = flag.String("peers", "http://10.77.9.48:9900,http://10.77.9.49:9901,http://10.77.9.50:9902", "raft peers")
+	peersStr   = flag.String("peers", "http://localhost:9900,http://localhost:9901,http://localhost:9902", "raft peers")
 	id         = flag.Int("id", 1, "peer id")
-	qps        = flag.Int("qps", 500, "proposals per second")
-	tickMs     = flag.Uint("heartbeat-interval", 100, "time (in milliseconds) of a heartbeat interval")
-	electionMs = flag.Uint("election-timeout", 1000, "time (in milliseconds) for an election to timeout")
+	qps        = flag.Int("qps", 1, "proposals per second")
+	tickMs     = flag.Uint("heartbeat-interval", 1000, "time (in milliseconds) of a heartbeat interval")
+	electionMs = flag.Uint("election-timeout", 5000, "time (in milliseconds) for an election to timeout")
 )
 
 var (
