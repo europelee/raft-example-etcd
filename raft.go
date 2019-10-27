@@ -182,8 +182,8 @@ func (rc *raftNode) startRaft() {
 	}
 	rc.node = raft.StartNode(c, startPeers)
 
-	ss := &stats.ServerStats{}
-	ss.Initialize()
+	ss := stats.NewServerStats(strconv.Itoa(rc.id), strconv.Itoa(rc.id))
+	//ss.Initialize()
 
 	rc.transport = &rafthttp.Transport{
 		ID:          types.ID(rc.id),
